@@ -1,8 +1,8 @@
-﻿using KD.Inspector.File;
-using KD.Inspector.File.Assembly;
+﻿using KD.Inspector.File.Assembly;
+using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
 using System.Linq;
+using System.Diagnostics.Contracts;
 
 namespace KD.Inspector
 {
@@ -11,29 +11,33 @@ namespace KD.Inspector
     /// </summary>
     public class InspectorFactory
     {
-        static IDictionary<string, IInspector> inspectors = new Dictionary<string, IInspector>();
+        static IDictionary<Type, Type> inspectors = new Dictionary<Type, Type>();
 
         /// <summary>
         /// Private constructor.
         /// </summary>
         private InspectorFactory()
         {
-            inspectors.Add("Assembly", new AssemblyFileInspector());
+            inspectors.Add(typeof(IAssemblyFileInspector), typeof(AssemblyFileInspector));
         }
 
         /// <summary>
-        /// Returns the Inspector specified for given Key.
+        /// Returns the Inspector specified for given generic inspector type.
         /// May return NULL if Key is not recognized.
         /// </summary>
-        /// <param name="inspectorType"></param>
         /// <returns></returns>
-        public static IInspector GetInspector(string inspectorType)
+        public static TInspectorType GetInspector<TInspectorType>() where TInspectorType : IInspector
         {
-            Contract.Ensures(Contract.Result<IInspector>() != null);
-            if (inspectors.ContainsKey(inspectorType))
-                return inspectors.FirstOrDefault(key => key.Key == inspectorType).Value;
-            else
-                return null;
+            Contract.Ensures(Contract.Result<TInspectorType>() != null);
+
+            var inspectorType = typeof(TInspectorType);
+            var outputTypePair = inspectors.FirstOrDefault(type => type.Key == inspectorType);
+            if (outputTypePair.Key == null || outputTypePair.Value == null) throw new Exception("Cannot resolve type.");
+
+            var outputType = outputTypePair.Value;
+            if (!inspectorType.IsAssignableFrom(outputType)) throw new Exception("Cannot resolve type.");
+
+            return (TInspectorType) Activator.CreateInstance(outputType);
         }
     }
 }

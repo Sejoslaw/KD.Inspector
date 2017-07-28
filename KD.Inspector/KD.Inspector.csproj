@@ -39,6 +39,7 @@
     <Compile Include="File\IFileInspector.cs" />
     <Compile Include="IInspector.cs" />
     <Compile Include="InspectorFactory.cs" />
+    <Compile Include="NullInspector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

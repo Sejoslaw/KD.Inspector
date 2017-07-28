@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.GB_File = new System.Windows.Forms.GroupBox();
-            this.B_ChooseFile = new System.Windows.Forms.Button();
             this.GB_FilePath = new System.Windows.Forms.GroupBox();
             this.L_FilePath = new System.Windows.Forms.Label();
+            this.B_ChooseFile = new System.Windows.Forms.Button();
             this.GB_FileDetails = new System.Windows.Forms.GroupBox();
             this.GB_File.SuspendLayout();
             this.GB_FilePath.SuspendLayout();
@@ -48,15 +48,6 @@
             this.GB_File.TabStop = false;
             this.GB_File.Text = "File";
             // 
-            // B_ChooseFile
-            // 
-            this.B_ChooseFile.Location = new System.Drawing.Point(7, 20);
-            this.B_ChooseFile.Name = "B_ChooseFile";
-            this.B_ChooseFile.Size = new System.Drawing.Size(103, 48);
-            this.B_ChooseFile.TabIndex = 0;
-            this.B_ChooseFile.Text = "Choose File";
-            this.B_ChooseFile.UseVisualStyleBackColor = true;
-            // 
             // GB_FilePath
             // 
             this.GB_FilePath.Controls.Add(this.L_FilePath);
@@ -72,9 +63,18 @@
             this.L_FilePath.AutoSize = true;
             this.L_FilePath.Location = new System.Drawing.Point(15, 19);
             this.L_FilePath.Name = "L_FilePath";
-            this.L_FilePath.Size = new System.Drawing.Size(45, 13);
+            this.L_FilePath.Size = new System.Drawing.Size(0, 13);
             this.L_FilePath.TabIndex = 0;
-            this.L_FilePath.Text = "FilePath";
+            // 
+            // B_ChooseFile
+            // 
+            this.B_ChooseFile.Location = new System.Drawing.Point(7, 20);
+            this.B_ChooseFile.Name = "B_ChooseFile";
+            this.B_ChooseFile.Size = new System.Drawing.Size(103, 48);
+            this.B_ChooseFile.TabIndex = 0;
+            this.B_ChooseFile.Text = "Choose File";
+            this.B_ChooseFile.UseVisualStyleBackColor = true;
+            this.B_ChooseFile.Click += new System.EventHandler(this.B_ChooseFile_Click);
             // 
             // GB_FileDetails
             // 

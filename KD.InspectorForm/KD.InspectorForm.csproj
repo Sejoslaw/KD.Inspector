@@ -78,5 +78,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KD.Inspector\KD.Inspector.csproj">
+      <Project>{4CF5CB03-E5ED-4B34-A492-F6BC20D13FAF}</Project>
+      <Name>KD.Inspector</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
