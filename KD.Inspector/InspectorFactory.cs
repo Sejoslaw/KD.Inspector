@@ -11,12 +11,18 @@ namespace KD.Inspector
     /// </summary>
     public class InspectorFactory
     {
-        static IDictionary<Type, Type> inspectors = new Dictionary<Type, Type>();
+        #region Private Variables
+
+        IDictionary<Type, Type> inspectors = new Dictionary<Type, Type>();
+
+        #endregion Private Variables
+
+        #region Public Methods
 
         /// <summary>
-        /// Private constructor.
+        /// Constructor in which Inspectors are added.
         /// </summary>
-        private InspectorFactory()
+        public InspectorFactory()
         {
             inspectors.Add(typeof(IAssemblyFileInspector), typeof(AssemblyFileInspector));
         }
@@ -26,7 +32,7 @@ namespace KD.Inspector
         /// May return NULL if Key is not recognized.
         /// </summary>
         /// <returns></returns>
-        public static TInspectorType GetInspector<TInspectorType>() where TInspectorType : IInspector
+        public TInspectorType GetInspector<TInspectorType>() where TInspectorType : IInspector
         {
             Contract.Ensures(Contract.Result<TInspectorType>() != null);
 
@@ -39,5 +45,20 @@ namespace KD.Inspector
 
             return (TInspectorType) Activator.CreateInstance(outputType);
         }
+        
+        #endregion Public Methods
+
+        #region Public Static Methods
+
+        /// <summary>
+        /// Returns new instance of Inspector Factory.
+        /// </summary>
+        /// <returns></returns>
+        public static InspectorFactory NewFactory()
+        {
+            return new InspectorFactory();
+        }
+
+        #endregion Public Static Methods
     }
 }
