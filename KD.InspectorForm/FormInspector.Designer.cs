@@ -33,8 +33,10 @@
             this.L_FilePath = new System.Windows.Forms.Label();
             this.B_ChooseFile = new System.Windows.Forms.Button();
             this.GB_FileDetails = new System.Windows.Forms.GroupBox();
+            this.TV_FileDetails = new System.Windows.Forms.TreeView();
             this.GB_File.SuspendLayout();
             this.GB_FilePath.SuspendLayout();
+            this.GB_FileDetails.SuspendLayout();
             this.SuspendLayout();
             // 
             // GB_File
@@ -78,12 +80,20 @@
             // 
             // GB_FileDetails
             // 
+            this.GB_FileDetails.Controls.Add(this.TV_FileDetails);
             this.GB_FileDetails.Location = new System.Drawing.Point(12, 101);
             this.GB_FileDetails.Name = "GB_FileDetails";
             this.GB_FileDetails.Size = new System.Drawing.Size(528, 395);
             this.GB_FileDetails.TabIndex = 1;
             this.GB_FileDetails.TabStop = false;
             this.GB_FileDetails.Text = "File Details";
+            // 
+            // TV_FileDetails
+            // 
+            this.TV_FileDetails.Location = new System.Drawing.Point(7, 20);
+            this.TV_FileDetails.Name = "TV_FileDetails";
+            this.TV_FileDetails.Size = new System.Drawing.Size(515, 369);
+            this.TV_FileDetails.TabIndex = 0;
             // 
             // FormInspector
             // 
@@ -99,6 +109,7 @@
             this.GB_File.ResumeLayout(false);
             this.GB_FilePath.ResumeLayout(false);
             this.GB_FilePath.PerformLayout();
+            this.GB_FileDetails.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -110,6 +121,7 @@
         private System.Windows.Forms.GroupBox GB_FilePath;
         private System.Windows.Forms.Label L_FilePath;
         private System.Windows.Forms.GroupBox GB_FileDetails;
+        private System.Windows.Forms.TreeView TV_FileDetails;
     }
 }
 

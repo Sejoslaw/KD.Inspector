@@ -1,7 +1,4 @@
-﻿using KD.Inspector;
-using KD.Inspector.File.Assembly;
-using System;
-using System.Reflection;
+﻿using System;
 using System.Windows.Forms;
 
 namespace KD.InspectorForm
@@ -20,12 +17,6 @@ namespace KD.InspectorForm
             {
                 string path = fileDialog.FileName;
                 L_FilePath.Text = path;
-
-                InspectorFactory factory = InspectorFactory.NewFactory();
-                IAssemblyFileInspector inspector = factory.GetInspector<IAssemblyFileInspector>();
-                inspector.ReadFile(L_FilePath.Text);
-                Assembly ass = inspector.GetAssembly();
-                Console.WriteLine(ass);
             }
         }
     }
