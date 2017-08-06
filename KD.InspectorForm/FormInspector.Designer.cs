@@ -32,11 +32,11 @@
             this.GB_FilePath = new System.Windows.Forms.GroupBox();
             this.L_FilePath = new System.Windows.Forms.Label();
             this.B_ChooseFile = new System.Windows.Forms.Button();
-            this.GB_FileDetails = new System.Windows.Forms.GroupBox();
+            this.GB_Classes = new System.Windows.Forms.GroupBox();
             this.TV_FileDetails = new System.Windows.Forms.TreeView();
             this.GB_File.SuspendLayout();
             this.GB_FilePath.SuspendLayout();
-            this.GB_FileDetails.SuspendLayout();
+            this.GB_Classes.SuspendLayout();
             this.SuspendLayout();
             // 
             // GB_File
@@ -78,15 +78,15 @@
             this.B_ChooseFile.UseVisualStyleBackColor = true;
             this.B_ChooseFile.Click += new System.EventHandler(this.B_ChooseFile_Click);
             // 
-            // GB_FileDetails
+            // GB_Classes
             // 
-            this.GB_FileDetails.Controls.Add(this.TV_FileDetails);
-            this.GB_FileDetails.Location = new System.Drawing.Point(12, 101);
-            this.GB_FileDetails.Name = "GB_FileDetails";
-            this.GB_FileDetails.Size = new System.Drawing.Size(528, 395);
-            this.GB_FileDetails.TabIndex = 1;
-            this.GB_FileDetails.TabStop = false;
-            this.GB_FileDetails.Text = "File Details";
+            this.GB_Classes.Controls.Add(this.TV_FileDetails);
+            this.GB_Classes.Location = new System.Drawing.Point(12, 101);
+            this.GB_Classes.Name = "GB_Classes";
+            this.GB_Classes.Size = new System.Drawing.Size(528, 395);
+            this.GB_Classes.TabIndex = 1;
+            this.GB_Classes.TabStop = false;
+            this.GB_Classes.Text = "Classes";
             // 
             // TV_FileDetails
             // 
@@ -100,7 +100,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(552, 508);
-            this.Controls.Add(this.GB_FileDetails);
+            this.Controls.Add(this.GB_Classes);
             this.Controls.Add(this.GB_File);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -109,7 +109,7 @@
             this.GB_File.ResumeLayout(false);
             this.GB_FilePath.ResumeLayout(false);
             this.GB_FilePath.PerformLayout();
-            this.GB_FileDetails.ResumeLayout(false);
+            this.GB_Classes.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -120,7 +120,7 @@
         private System.Windows.Forms.Button B_ChooseFile;
         private System.Windows.Forms.GroupBox GB_FilePath;
         private System.Windows.Forms.Label L_FilePath;
-        private System.Windows.Forms.GroupBox GB_FileDetails;
+        private System.Windows.Forms.GroupBox GB_Classes;
         private System.Windows.Forms.TreeView TV_FileDetails;
     }
 }

@@ -20,13 +20,13 @@ namespace KD.InspectorForm
                 L_FilePath.Text = path;
 
                 Assembly readedAssembly = Assembly.LoadFile(L_FilePath.Text);
+
+                TV_FileDetails.BeginUpdate();
+                TV_FileDetails.Nodes.Clear();
+
                 Type[] types = readedAssembly.GetTypes();
                 foreach (Type type in types)
                 {
-                    TV_FileDetails.BeginUpdate();
-
-                    TV_FileDetails.Nodes.Clear();
-
                     var firstLayer = TV_FileDetails.Nodes;
                     firstLayer.Add(type.Name);
                     var firstLayerCount = firstLayer.Count;
@@ -56,9 +56,8 @@ namespace KD.InspectorForm
                             ";";
                         thirdLayer.Add(methodString);
                     }
-
-                    TV_FileDetails.EndUpdate();
                 }
+                TV_FileDetails.EndUpdate();
             }
         }
 
